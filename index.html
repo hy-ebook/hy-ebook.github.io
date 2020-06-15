@@ -191,6 +191,33 @@ body {
 </div>
 
 <script>
+// http://www.javascriptkit.com/javatutors/copytoclipboard.shtml
+const btn = document.querySelector('button');
+const mix = document.querySelector('#mixin');
+
+
+btn.addEventListener('click',(e)=>{
+    const range = document.createRange()    // create new range object
+          range.selectNodeContents(mix)     // set range to encompass desired element text
+    const selection = window.getSelection() // get Selection object from currently user selected text
+          selection.removeAllRanges()       // unselect any user selected text (if any)
+          selection.addRange(range)         // add range to Selection object to select it  
+  
+    // run command to copy selected text to clipboard
+    const success = false;
+    try { success = document.execCommand("copy") } 
+    catch(e){ }
+          
+    if (success){ 
+        selection.removeAllRanges() 
+        btn.classList.add('copied'); 
+        setTimeout(()=>{ btn.classList.remove('copied')},3000); 
+      
+    }  
+})
+</script>
+
+<script>
 function myFunction() {
   var x = document.getElementById("myTopnav");
   if (x.className === "topnav") {
@@ -199,7 +226,8 @@ function myFunction() {
     x.className = "topnav";
   }
 }
-</script></header>
+</script>
+</header>
     <main>
     
 
