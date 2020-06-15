@@ -3,7 +3,9 @@
   <head>
     <meta charset="utf-8">
     <title>Harun Yahya (Adnan Oktar) Online Free Books</title>
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
     <style type="text/css">
 .tftable {font-size:14px;color:#333333;width:70%;border-width: 1px;border-color: #729ea5;border-collapse: collapse;margin-left: auto;margin-right: auto;}
 .tftable th {font-size:13px;background-color:#acc8cc;border-width: 1px;padding: 9px;border-style: solid;border-color: #729ea5;text-align:left;}
@@ -12,6 +14,110 @@
 .tftable tr:hover {background-color:#ffffff;}
 </style>
 
+<style>
+$layout-max-width: 720px;
+$font-bound-min:   320px; // will override defaults
+$font-bound-max:   720px; // will override defaults
+
+
+// ==============================
+// Font size mixin
+// ==============================
+
+//  default font scale bounding
+$font-lock-min:  400px !default; 
+$font-lock-max: 1000px !default;
+
+//  font-size 
+@mixin font-size(
+  $min,                         // font-size 
+  $max: null,                   // optional maximum font size
+  $lock-min: $font-lock-min,  // optional minimum viewport width 
+  $lock-max: $font-lock-max   // optional maximum viewport width 
+  ){
+    & { font-size: $min; }
+    @if $max {
+      @media (min-width: $lock-min) and (max-width: $lock-max){ 
+        & { 
+          font-size: calc(
+            #{$min} + 
+            #{num($max) - num($min)} * 
+            (100vw - #{$lock-min}) / 
+            #{num($lock-max) - num($lock-min)}
+          ); 
+        } 
+      }
+      @media (min-width: $lock-max){ 
+        & { font-size: $max; } 
+      }
+    }
+}
+
+//  strip units helper function
+@function num($input){  @return $input/($input * 0 + 1); }
+
+
+
+// ==============================
+// Usage
+// ==============================
+@import url('https://fonts.googleapis.com/css?family=PT+Serif|Rubik:900');
+html { box-sizing: border-box; }
+*,*:before,*:after { box-sizing: inherit; }
+body { margin:0; padding:1rem; }
+* { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+article { max-width: $layout-max-width; margin: 0 auto; }
+
+//
+//  set default scaling
+//
+:root { @include font-size(16px, 24px); }
+
+h1 { 
+  @include font-size(40px, 70px);
+  font-family: 'Rubik', sans-serif;
+  text-align: center;  
+  color: #383838;
+  span { display: block; }
+}
+h2 { font-family: 'PT Serif', serif; font-size: 1.3rem; }
+p  { font-family: 'PT Serif', serif; }
+a  { color: tomato; display: inline-block; }
+
+pre { 
+  padding: 1rem;
+  margin-bottom: 1rem;
+  @include font-size(11px, 13px, 320px, 600px);
+  border-radius: 0.1rem;
+  background: whitesmoke;
+  display: block;
+  position:relative;
+  font-family: monospace;
+  span { color: #888; }
+  
+}
+
+button {
+  appearance: none;
+  border:0;
+  background-color: tomato;
+  color: white;
+  font-size: 0.6rem;
+  outline:0;
+  &:after {
+    transition:1s;
+    content: 'Copied to clipboard';
+    display: block;
+    vertical-align: middle;
+    overflow: hidden;
+    max-height:0;
+  }
+}
+.copied {
+  background-color: olive;
+  &:after { max-height:1rem;}
+}
+</style>
 <style>
 body {
   margin: 0;
