@@ -95,126 +95,6 @@ body {
 }
 </style>
 
-<style media="screen">
-body {
-    background-color:#f0f0f0;
- } 
-#img-holder {
-    position:relative;
-    min-height:25px;
- }
-#mask,#pic {
-    position:absolute;
-    z-index:1;
-    left:0;
-    right:0;
-    margin:auto;
-    width:16px;
-    padding:4px;
-    border:1px solid #006000;
-    background-color:#fff;
-    box-shadow:5px 5px 5px #666;
-    outline:0;
-    cursor:pointer;
- }
-#mask {
-    z-index:3;
-    width:226px;
-    height:143px;
-    padding:0;
-    border:0;
-    background-color:transparent;
-    box-shadow:none;
- }
-#mask:focus~#pic  {
-    -webkit-animation:newsize 5s forwards;
-    animation:newsize 5s forwards;
- }
-#mask:focus{
-    -webkit-animation:masksize 5s forwards;
-    animation:masksize 5s forwards;
- }
-#pic:focus  {
-    -webkit-animation:oldsize 5s forwards;
-    animation:oldsize 5s forwards;
- }
-@-webkit-keyframes newsize {
-  from {
-    width:16px;
-    padding:4px;
-    border:1px solid #006000;
-    box-shadow:5px 5px 5px #666;
-  }
-  to {
-    width:216px;
-    padding:12px;
-    border:3px solid #006000;
-    box-shadow:15px 15px 15px #666;	
-  }
- }
-@keyframes newsize {
-  from {
-    width:16px;
-    padding:4px;
-    border:1px solid #006000;
-    box-shadow:5px 5px 5px #666;
-  }
-  to {
-    width:216px;
-    padding:12px;
-    border:3px solid #006000;
-    box-shadow:15px 15px 15px #666;	
-  }
- }
-@-webkit-keyframes masksize {
-  from {
-    width:226px;
-    height:143px;	
-  }
-  to {
-    width:0;
-    height:0;
-  }
- }
-@keyframes masksize {
-  from {
-    width:226px;
-    height:143px;	
-  }
-  to {
-    width:0;
-    height:0;
-  }
- }
-@-webkit-keyframes oldsize {
-  from {
-    width:216px;
-    padding:12px;
-    border:3px solid #006000;
-    box-shadow:15px 15px 15px #666;	
-  }
-  to {
-    width:16px;
-    padding:4px;
-    border:1px solid #006000;
-    box-shadow:5px 5px 5px #666;
-  }
- }
-@keyframes oldsize {
-  from {
-    width:216px;
-    padding:12px;
-    border:3px solid #006000;
-    box-shadow:15px 15px 15px #666;	
-  }
-  to {
-    width:16px;
-    padding:4px;
-    border:1px solid #006000;
-    box-shadow:5px 5px 5px #666;
-  }
- }
-</style>
 
 </head>
 <body>
@@ -286,9 +166,9 @@ function searchTable2() {
     
 <br> 
  <table class="tftable" id='myTable'>
-<tr><th>No</th><th>Headline</th><th>PDF Reader</th><th>ePub Reader</th><th>odt</th><th>Cover</th></tr>
+<tr><th>No</th><th>Headline</th><th>PDF Reader</th><th>ePub Reader</th><th>odt</th></tr>
 
-<tr><td>1</td><td>Allah's Miracles in the Qur'an</td><td><a href="https://hy-ebook.github.io/viewer/web/viewer.html?file=https://hy-ebook.github.io/pdf/HY1.pdf" target="_blank"><img src="/asset/images/pdf.png" alt="icon"></a> </td><td><a href="https://hy-ebook.github.io/Bibi/bibi/?book=1.epub" target="_blank"><img src="/asset/images/pub.png" alt="icon"></a></td><td><a href="https://view.officeapps.live.com/op/view.aspx?src=https://hy-ebook.github.io/odt/1.odt" target="_blank"><img src="/asset/images/odt.png" alt="icon"></a></td><td><div id="img-holder"><span id="mask" tabindex="1"></span><img id="pic" src="/asset/images/KuranMucizeleri1_en_3b_K_171003.jpg" alt="cover" tabindex="2"></div></td></tr>
+<tr><td>1</td><td>Allah's Miracles in the Qur'an</td><td><a href="https://hy-ebook.github.io/viewer/web/viewer.html?file=https://hy-ebook.github.io/pdf/HY1.pdf" target="_blank"><img src="/asset/images/pdf.png" alt="icon"></a> </td><td><a href="https://hy-ebook.github.io/Bibi/bibi/?book=1.epub" target="_blank"><img src="/asset/images/pub.png" alt="icon"></a></td><td><a href="https://view.officeapps.live.com/op/view.aspx?src=https://hy-ebook.github.io/odt/1.odt" target="_blank"><img src="/asset/images/odt.png" alt="icon"></a></td></tr>
 <tr><td>2</td><td>ATLAS OF CREATION V1</td><td><a href="https://hy-ebook.github.io/viewer/web/viewer.html?file=https://hy-ebook.github.io/pdf/HY2.pdf" target="_blank"><img src="/asset/images/pdf.png" alt="icon"></a> </td><td><a href="https://hy-ebook.github.io/Bibi/bibi/?book=2.epub" target="_blank"><img src="/asset/images/pub.png" alt="icon"></a></td><td><a href="https://view.officeapps.live.com/op/view.aspx?src=https://hy-ebook.github.io/odt/2.odt" target="_blank"><img src="/asset/images/odt.png" alt="icon"></a></td></tr>
 <tr><td>3</td><td>ATLAS OF CREATION V2</td><td><a href="https://hy-ebook.github.io/viewer/web/viewer.html?file=https://hy-ebook.github.io/pdf/HY3.pdf" target="_blank"><img src="/asset/images/pdf.png" alt="icon"></a> </td><td><a href="https://hy-ebook.github.io/Bibi/bibi/?book=3.epub" target="_blank"><img src="/asset/images/pub.png" alt="icon"></a></td><td><a href="https://view.officeapps.live.com/op/view.aspx?src=https://hy-ebook.github.io/odt/3.odt" target="_blank"><img src="/asset/images/odt.png" alt="icon"></a></td></tr>
 <tr><td>4</td><td>ATLAS OF CREATION V3</td><td><a href="https://hy-ebook.github.io/viewer/web/viewer.html?file=https://hy-ebook.github.io/pdf/HY4.pdf" target="_blank"><img src="/asset/images/pdf.png" alt="icon"></a> </td><td><a href="https://hy-ebook.github.io/Bibi/bibi/?book=4.epub" target="_blank"><img src="/asset/images/pub.png" alt="icon"></a></td><td><a href="https://view.officeapps.live.com/op/view.aspx?src=https://hy-ebook.github.io/odt/4.odt" target="_blank"><img src="/asset/images/odt.png" alt="icon"></a></td></tr>
