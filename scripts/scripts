@@ -2,7 +2,7 @@
 for i in {1..41}; do ffmpeg -i HYVideo$i.mp4 -r 0.0033 -vf scale=-1:220 -frames:v 1 -vcodec png capture-$i.png; done
 
 #pdf dnüştürücü
-soffice --headless --convert-to epub *.odt
+soffice --headless --convert-to pdf *.odt --outdir
 
 
 #pdf işler
